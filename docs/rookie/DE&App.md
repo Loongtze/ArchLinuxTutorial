@@ -1,6 +1,6 @@
 # 桌面环境与常用应用
 
-官方文档: [安装后的工作](https://wiki.archlinux.org/index.php/General_recommendations)  
+官方文档: [安装后的工作](https://wiki.archlinux.org/index.php/General_recommendations)
 本节只介绍最基本的，能使系统真正意义上可用所需的组件
 
 注: 文档中带有 <sup>AUR</sup> 角标的软件代表是用户自行打包的第三方软件[AUR](https://aur.archlinux.org/)，不在 Arch 官方支持范围内，可能会出现更新不及时、无法安装、使用出错等各种问题。如果不是实在没有官方支持的同类软件，则不建议使用。
@@ -27,31 +27,31 @@ useradd -m -G wheel -s /bin/bash testuser  #wheel附加组可sudo，以root用�
 passwd testuser
 ```
 
-编辑 sudo 文件
+编辑 sudoers 配置文件
 
 ```bash
-EDITOR=vim visudo
+EDITOR=vim visudo  # 需要以 root 用户运行 visudo 命令
 ```
 
-找到这样的一行,把前面的注释符号#去掉，`:wq`保存并退出即可。
+找到下面这样的一行，把前面的注释符号 `#` 去掉，`:wq` 保存并退出即可。
 
-```bash
+```sudoers
 #%wheel ALL=(ALL) ALL
 ```
 
 这里稍微解释一下
-%wheel 代表是 wheel 组，百分号是前缀  
-ALL= 代表在所有主机上都生效(如果把同样的`sudoers`文件下发到了多个主机上)  
-(ALL) 代表可以成为任意目标用户  
-ALL 代表可以执行任意命令  
+%wheel 代表是 wheel 组，百分号是前缀
+ALL= 代表在所有主机上都生效(如果把同样的`sudoers`文件下发到了多个主机上)
+(ALL) 代表可以成为任意目标用户
+ALL 代表可以执行任意命令
 一个更详细的例子:
 
-```bash
+```sudoers
 %mailadmin   snow,rain=(root) /usr/sbin/postfix, /usr/sbin/postsuper, /usr/bin/doveadm
 nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload
 ```
 
-组 mailadmin 可以作为 root 用户，执行一些邮件服务器控制命令。可以在 "snow" 和 "rain"这两台主机上执行  
+组 mailadmin 可以作为 root 用户，执行一些邮件服务器控制命令。可以在 "snow" 和 "rain"这两台主机上执行
 用户 nobody 可以以 root 用户执行`rndc reload`命令。可以在所有主机上执行。同时可以不输入密码。(正常来说 sudo 都是要求输入调用方的密码的)
 
 ## 3.安装 KDE Plasma 桌面环境
@@ -160,7 +160,7 @@ sudo pacman -U yay-bin-11.0.2-1-x86_64.pkg.tar.zst
 
 ## 10.安装输入法
 
-[Fcitx5 官方文档](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)  
+[Fcitx5 官方文档](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)
 中文及日文输入法均体验良好。
 
 ```bash
@@ -172,7 +172,7 @@ sudo pacman -S fcitx5-pinyin-zhwiki #中文维基百科词库
 sudo pacman -S fcitx5-material-color #主题
 ```
 
-设置环境变量 编辑文件 `sudo vim /etc/environment` 加入以下内容。konsole 以及 dolphin 都需要这些环境变量，倒是 chrome 和 firefox 都不需要就可以输入中文
+设置环境变量：编辑文件 `EDITOR=vim sudoedit /etc/environment` 加入以下内容。konsole 以及 dolphin 都需要这些环境变量，倒是 chrome 和 firefox 都不需要就可以输入中文
 
 ```bash
 GTK_IM_MODULE=fcitx
@@ -191,11 +191,13 @@ SDL_IM_MODULE=fcitx
 
 ## 11.配置系统默认编辑器
 
-默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑`sudo vim /etc/profile`文件，加入如下内容，将 vim 设置为默认 EDITOR
+默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑 `EDITOR=vim sudoedit /etc/profile` 文件，加入如下内容，将 vim 设置为默认 EDITOR
 
 ```bash
 export EDITOR='vim'
 ```
+
+这样就不用在每次执行命令时都指定一遍 `EDITOR=vim` 了。
 
 ## 12.启用蓝牙(若有)
 
