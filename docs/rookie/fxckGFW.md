@@ -29,6 +29,8 @@ vmess://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 如果购买机场的订阅服务，可以参考它们的订阅流程以获取节点。在我们列出一些较为可信的机场服务以供选择，但是我们不提供任何担保。需要提醒的是，机场服务基本属于灰色产业，随时有停止服务的可能，购买建议以月付进行以避免过大损失。
 
+- [GLaDOS](https://glados.one/) 邮箱注册后使用激活码`9FMKX-GYLMK-ZYIZW-5U3T0`激活账户并获取免费时长
+
 ---
 
 如果你不想花任何费用，可安装[lantern](https://aur.archlinux.org/packages/lantern-bin/)和[赛风](https://psiphon3.com/zh/index.html)这类软件。它们都是自由软件。
