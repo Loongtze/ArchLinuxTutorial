@@ -35,7 +35,7 @@ proxychains systemsettings5 #通过代理打开系统设置
 
 ## 欢迎屏幕(splashscreen)
 
-可以对在登录界面后的欢迎屏幕进行美化。 _系统设置_ > _外观_ > _欢迎屏幕_ > _获取新欢迎屏幕_ ，搜索 miku 进行设置即可。这个`Snowy Night Miku`是群主搜索到的最好看的二刺猿属性的初始界面了，强烈建议安装。另外，还有一个大佬做了一些二次元主题的欢迎屏幕，但是质量一般，这里是他的[主页](https://www.pling.com/u/thevladsoft/)。
+可以对在登录界面后的欢迎屏幕进行美化。 _系统设置_ > _外观_ > _欢迎屏幕_ > _获取新欢迎屏幕_ ，搜索 miku 进行设置即可。这个`Snowy Night Miku`是我们搜索到的最好看的二刺猿属性的初始界面了。另外，还有一个大佬做了一些二次元主题的欢迎屏幕，但是质量一般，这里是他的[主页](https://www.pling.com/u/thevladsoft/)。
 
 ## 桌面插件
 
@@ -97,7 +97,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ## 开机动画
 
-[Plymouth](https://fedoraproject.org/wiki/Releases/FeatureBetterStartup) 是一个来自于Fedora社区的提供美化启动图形界面的功能的项目，如有需要，可以参考[官方文档](https://wiki.archlinux.org/title/Plymouth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))进行配置。不建议新手在此项配置上花费太多时间。
+[Plymouth](https://fedoraproject.org/wiki/Releases/FeatureBetterStartup) 是一个来自于 Fedora 社区的提供美化启动图形界面的功能的项目，如有需要，可以参考[官方文档](<https://wiki.archlinux.org/title/Plymouth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)进行配置。不建议新手在此项配置上花费太多时间。
 
 ---
 

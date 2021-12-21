@@ -18,11 +18,7 @@ b 站直播时的弹幕可以使用[弹幕库](https://www.danmaku.live/),这个
 
 ## 视频制作剪辑与特效
 
-视频剪辑与制作推荐使用自由软件[shotcut](https://www.archlinux.org/packages/community/x86_64/shotcut/)。它可以满足大多数的视频剪辑制作需求，可以收看[简明视频教程](https://www.bilibili.com/video/BV1zb411H7J5/)。同类的软件还有[kdenlive](https://www.archlinux.org/packages/extra/x86_64/kdenlive/)以及[mkvtoolnix](https://archlinux.org/packages/extra/x86_64/mkvtoolnix-gui/)。
-
-如果你需要功能更加强大的软件，可以尝试免费使用的专有软件[davinci-resolve](https://aur.archlinux.org/packages/davinci-resolve/)<sup>AUR</sup>或者其收费版[davinci-resolve-studio](https://aur.archlinux.org/packages/davinci-resolve-studio/)<sup>AUR</sup>。达芬奇是一个特效、剪辑、调色、配音的综合体软件。需要注意的是，Linux 下免费版达芬奇支持的编解码格式有限[[1]](https://documents.blackmagicdesign.com/SupportNotes/DaVinci_Resolve_15_Supported_Codec_List.pdf)。
-
-> 因为达芬奇没有编译入 fcitx 模块，所以无法输入中文。正常来说只能等待新版达芬奇加入这个模块。喜欢折腾的可以尝试下老 K 给出的[魔改解决方案](https://www.csslayer.info/wordpress/fcitx-dev/a-case-study-how-to-compile-a-fcitx-platforminputcontext-plugin-for-a-proprietary-software-that-uses-qt-5/)
+视频剪辑与制作推荐使用自由软件[shotcut](https://www.archlinux.org/packages/community/x86_64/shotcut/)。它可以满足大多数的视频剪辑制作需求。同类的软件还有[kdenlive](https://www.archlinux.org/packages/extra/x86_64/kdenlive/)以及[mkvtoolnix](https://archlinux.org/packages/extra/x86_64/mkvtoolnix-gui/)。
 
 在视频录制时，一些 KDE 的辅助功能非常实用。在 KDE 的系统设置中，找到工作区行为->桌面特效，在无障碍功能中勾选`鼠标定位`与`鼠标点击动效`两项，并使用。这两项设置在视频制作中可以突出的显示鼠标位置与点击效果，对于视频制作来说相当有用。
 
@@ -42,8 +38,7 @@ b 站直播时的弹幕可以使用[弹幕库](https://www.danmaku.live/),这个
 
 ## 建模
 
-可使用强大的 3D 建模软件[blender](https://archlinux.org/packages/community/x86_64/blender/)
-
+- [blender](https://archlinux.org/packages/community/x86_64/blender/) 强大的 3D 建模软件
 - [Sweet Home 3D](https://archlinux.org/packages/community/x86_64/sweethome3d/) Sweet Home 3D 是一款免费的家装辅助设计软件。它能帮您通过二维的家居平面图来设计和布置您的家具，还可以用三维的视角浏览整个装修布局的全貌。
 - [Synfig Studio](https://archlinux.org/packages/community/x86_64/synfigstudio/) Synfig Studio 是一款免费开源的 2D 动画软件，用于使用矢量和位图图稿创建电影质量的动画。
 
@@ -67,8 +62,8 @@ b 站直播时的弹幕可以使用[弹幕库](https://www.danmaku.live/),这个
 ## 字幕制作
 
 一般情况来讲，一个视频加上外带的 srt 字幕是较为普遍的情况。这里描述如何为 youtube 视频加入字幕。  
-首先要进行视频字幕的下载，这里可以使用一个 chrome 拓展：[YouTube™ 双字幕](https://chrome.google.com/webstore/detail/youtube-dual-subtitles/hkbdddpiemdeibjoknnofflfgbgnebcm)，即可下载你所需要的字幕文件。如果你有更方便的下载方式，欢迎告诉群主。  
-接下来进行字幕与视频的重新烧录。MKVToolNix 只能做那种分离的字幕，但是 B 站要上传烧录好的，为了更好的兼容性，建议始终将视频和文件重新烧录。使用 ffmpeg 进行操作：
+首先要进行视频字幕的下载，这里可以使用一个 chrome 拓展：[YouTube™ 双字幕](https://chrome.google.com/webstore/detail/youtube-dual-subtitles/hkbdddpiemdeibjoknnofflfgbgnebcm)，即可下载你所需要的字幕文件。如果你有更方便的下载方式，欢迎告诉我们。  
+接下来进行字幕与视频的重新烧录。MKVToolNix 只能做那种分离的字幕，但是 如 B 站等某些视频网站需要上传烧录好的，为了更好的兼容性，建议始终将视频和文件重新烧录。使用 ffmpeg 进行操作：
 
 ```bash
 ffmpeg -i input.mp4 -vf subtitles=input.srt output.mp4
@@ -87,3 +82,7 @@ ffmpeg -i hack_with_zh.mp4 -strict -2 -vf subtitles=hack_en.srt:force_style
 ## 视觉小说的素材提取
 
 目前一般常用的为 [GARbro](https://github.com/morkt/GARbro)，但是其在 linux 下通过 wine 无法正常使用。这里提供一个跨平台的 gal game 内容提取工具[arc_unpacker](https://aur.archlinux.org/packages/arc_unpacker-git/)。详细用法可自行查看其 github。
+
+<!-- 如果你需要功能更加强大的软件，可以尝试免费使用的专有软件[davinci-resolve](https://aur.archlinux.org/packages/davinci-resolve/)<sup>AUR</sup>或者其收费版[davinci-resolve-studio](https://aur.archlinux.org/packages/davinci-resolve-studio/)<sup>AUR</sup>。达芬奇是一个特效、剪辑、调色、配音的综合体软件。需要注意的是，Linux 下免费版达芬奇支持的编解码格式有限[[1]](https://documents.blackmagicdesign.com/SupportNotes/DaVinci_Resolve_15_Supported_Codec_List.pdf)。
+
+> 因为达芬奇没有编译入 fcitx 模块，所以无法输入中文。正常来说只能等待新版达芬奇加入这个模块。喜欢折腾的可以尝试下老 K 给出的[魔改解决方案](https://www.csslayer.info/wordpress/fcitx-dev/a-case-study-how-to-compile-a-fcitx-platforminputcontext-plugin-for-a-proprietary-software-that-uses-qt-5/) -->

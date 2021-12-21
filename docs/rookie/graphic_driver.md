@@ -129,7 +129,7 @@ DRI_PRIME=1 steam steam://rungameid/730 #运行cs go
 
 [官方文档](https://wiki.archlinux.org/index.php/benchmarking)。
 
-最传统和广为人知的方式为使用`glxgears`命令进行测试，其属于[mesa-demos](https://www.archlinux.org/packages/extra/x86_64/mesa-demos/)包。但其仅仅只能提供简单的测试场景及帧数显示，只测试了当前 OpenGL 功能的一小部分，功能明显不足。群主推荐如下两种工具。
+最传统和广为人知的方式为使用`glxgears`命令进行测试，其属于[mesa-demos](https://www.archlinux.org/packages/extra/x86_64/mesa-demos/)包。但其仅仅只能提供简单的测试场景及帧数显示，只测试了当前 OpenGL 功能的一小部分，功能明显不足。我们推荐如下两种工具。
 
 ### glmark2
 

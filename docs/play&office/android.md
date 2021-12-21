@@ -36,7 +36,6 @@ fastboot: error: Command failed
 如果没有相关信息有几个论坛和网站可以看看
 
 - xda https://forum.xda-developers.com/
-- https://forum.cusrom.com/categories/vivo-y85/
 - https://androidfilehost.com/ 搜索 开发代号 + 你想要的系统名字
 
 一般 twrp 的版本和 ROM 包有对应关系，刷机前先确认你的两个版本是兼容的，否则刷机过程可能报奇怪的错误，如 unable to mount /system
