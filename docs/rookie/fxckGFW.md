@@ -75,7 +75,7 @@ sudo pacman -U qv2ray-static-bin-nightly-20211215-1-x86_64.pkg.tar.zst
   sudo pacman -R qv2ray-dev-git
   ```
 
-- Qv2ray 3.0 与旧版插件不兼容，原有旧版插件不可使用。目前 3.0 集成了 VMess、Shadowsocks、以及 Naive 的支持。**如果**你需要使用其他协议的节点，可以选择安装 2.7 版本的 `qv2ray-dev-git` 并安装对应插件。如有这方面的需求，读者应该先使用受支持的协议节点设置好翻墙后，再回头安装 2.7 版本的 Qv2ray 和对应插件，因为安装这些包需要翻墙。请在 AUR 搜索关键字 qv2ray-plugin，在[结果](https://aur.archlinux.org/packages/?O=0&K=qv2ray-plugin)中选取你所需要的对应插件进行安装即可。
+- Qv2ray 3.0 与旧版插件不兼容，原有旧版插件不可使用。目前 3.0 集成了 VMess、Shadowsocks、Trojan 的标准格式 以及 Naive 的支持。**如果**你需要使用其他协议的节点，或非标准形式的节点，可以选择安装 2.7 版本的 `qv2ray-dev-git` 并安装对应插件。如有这方面的需求，读者应该先使用受支持的协议节点设置好翻墙后，再回头安装 2.7 版本的 Qv2ray 和对应插件，因为安装这些包需要翻墙。请在 AUR 搜索关键字 qv2ray-plugin，在[结果](https://aur.archlinux.org/packages/?O=0&K=qv2ray-plugin)中选取你所需要的对应插件进行安装即可。
 
 ### V2rayA
 
