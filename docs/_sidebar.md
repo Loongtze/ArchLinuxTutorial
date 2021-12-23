@@ -14,7 +14,8 @@
   - [成为不合格的系统管理员](/advanced/beAdmin)
   - [功耗控制](/advanced/undervoltage)
   - [系统美化](/advanced/beauty)
-  <!-- - [AUR打包](/advanced/AUR) -->
+    <!-- - [AUR打包](/advanced/AUR) -->
+    <!-- - [WireGuard](https://wiki.archlinux.org/title/WireGuard) -->
   - [常见问题排除与解决](/advanced/troubleshooting)
 
 - 娱乐与办公

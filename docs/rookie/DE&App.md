@@ -81,7 +81,7 @@ mkswap /swapfile #格式化swap文件
 swapon /swapfile #启用swap文件
 ```
 
-最后，向/etc/fstab 中追加如下内容：
+最后，向/etc/fstab 中**追加**如下内容：
 
 ```bash
 /swapfile none swap defaults 0 0

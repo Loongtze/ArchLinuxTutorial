@@ -1,15 +1,15 @@
 # Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio <!-- {docsify-ignore-all} -->
 
-Arch Linux 安装使用教程，每月实时更新！包含从 Arch Linux 安装，科学上网，透明代理，显卡驱动，日常软件的使用等，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！
+Arch Linux 安装使用教程，每日实时更新！包含从 Arch Linux 安装，科学上网，透明代理，显卡驱动，日常软件的使用等，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！
 
-本书提供多年使用 Linux 的一些经验，并教与需要的人。与 Linux 密不可分的另一部分: [GNU](https://www.gnu.org/home.zh-cn.html)  
-新同学请确保你已经按照步骤完成了`新手上路`章节中的全部内容后再向下阅读，否则可能会出现问题。
+本书提供我们多年使用 Linux 的一些经验，并教与需要的人。与 Linux 密不可分的另一部分: [GNU](https://www.gnu.org/home.zh-cn.html)  
+新读者请确保你已经按照步骤完成了`新手上路`章节中的**全部内容**后再向下阅读，否则可能会出现问题。
 
 - 本书特点
   - Linux 二次元电报交流群:[ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://t.me/FSF_Ministry_of_Truth)。
   - 无废话，只给出一套**我们认为**较为合适的路线，不会面面俱到。本书是 tutorial,不是 reference，定位与 wiki.archlinux.org 不同。
   - 本书使用 docsify 以及 gitalk 开发，并且网站源码全部开源，可放心留言讨论。
-  - 本书会持续更新。每月随时根据最新 arch linux 动态更新。[鼓励志愿者提交更新](/contribution.md)。
+  - 本书会持续更新。每日随时根据最新 arch linux 及相关软件动态更新。[鼓励志愿者提交更新](/contribution.md)。
   - 如有必要，相关位置都会贴上 arch linux 相关官方文档作为参考。
   - 不支持任何双系统。
 
@@ -17,11 +17,11 @@ Arch Linux 安装使用教程，每月实时更新！包含从 Arch Linux 安装
 
 > 请不要在上述群组以外的任何群组反馈本文档相关问题。这会为它们带来困扰以及不愉快的心情。
 
-#### 为什么使用 Linux？
+## 为什么使用 Linux？
 
 简单来说，现在世界上流行的 PC 操作系统有三个，Windows，Linux 与 macOS。
 
-如果你是计算机相关专业的学生或者从业者，非常建议你使用 Linux 作为自己的日常系统。在使用 Linux 系统的过程中，可以无形中接触到各个方面的计算机知识，并且在未来的工作中也会为你带来相关方面的优势。 macOS 在一些方面（即大致为 BSD 与 GNU/Linux 各方面的区别 )与 Linux 的操作并不同，并且由于其封闭的特性，个人不建议使用。Windows 在很多编程环境的配制过程中异常痛苦，且会出现各种各样的问题，强烈不建议使用 Windows 进行编程(除非你学的就是 Windows 系统编程)。
+如果你是计算机相关专业的学生或者从业者，非常建议你使用 Linux 作为自己的日常系统。在使用 Linux 系统的过程中，可以无形中接触到各个方面的计算机知识，并且在未来的工作中也会为你带来相关方面的优势。 macOS 在一些方面（即大致为 BSD 与 GNU/Linux 各方面的区别 )与 Linux 的操作并不同，并且由于其封闭的特性，我们不建议使用。Windows 在很多编程环境的配制过程中异常痛苦，且会出现各种各样的问题，强烈不建议使用 Windows 进行编程(除非你学的就是 Windows 系统编程)。
 
 更重要的是，GNU/Linux 是自由软件运动的相关重要产物。[自由软件运动(free software movement)](https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6%E8%BF%90%E5%8A%A8)拒绝专有软件并推广自由软件,它的终极目标在于解放网络世界中的每个人——即每个电脑用户。每个人都应拥有完全掌控所运行软件的权利。[自由软件](https://www.gnu.org/philosophy/free-sw.zh-cn.html)有如下四项原则：
 
@@ -34,11 +34,11 @@ Arch Linux 安装使用教程，每月实时更新！包含从 Arch Linux 安装
 
 最后，如果你想尝试完全免费的系统，或是喜欢探索充满新鲜与挑战的事物，Linux 也是你不可错过的体验。
 
-#### 为什么使用 Arch Linux？
+## 为什么使用 Arch Linux？
 
-最重要的，Arch Linux 的软件包是最新的，这在日常使用中非常必要，你可以第一时间享受到新软件的特性，而不用烦心于升级软件时的过旧依赖的问题。其提供的软件包可以让你轻松安装使用，而不用自行编译。除此之外，用户仓库 AUR 由世界各地的 Arch Linux 用户驱动，提供了海量的非官方软件以供选择。Arch Linux 在灵活与易用两方面达到了完美的平衡。
+最重要的，Arch Linux 的软件包是最新的，这在日常使用中非常必要，你可以第一时间享受到新软件的特性，而不用烦心于升级软件时的过旧依赖的问题。其提供的软件包可以让你轻松安装使用，而不用自行编译。除此之外，用户仓库 AUR 由世界各地的 Arch Linux 用户驱动，提供了海量的非官方软件以供选择。Arch Linux 在灵活与易用两方面达到了几乎完美的平衡。
 
-Arch Linux 可以以超高的自由度来定制自己的系统，并且其拥有最完善的[文档](https://wiki.archlinux.org/index.php/Main_page)，使得绝大多数问题都可以通过查看官方文档的方式解决。正是由于其软件更新的策略的激进，就使得用户必须常常对系统进行更新，如果你不能经常照顾系统升级的话，也许你不应该使用 Arch Linux。较长时间段内没有升级可能会造成各种问题（俗称 `滚挂了`），虽然大多数问题可以通过救援手段事后补救，但还是常常更新得好。同时，关注 Arch Linux 的[新闻列表](https://archlinux.org/news/)可以帮助你得知最新的升级注意事项。
+Arch Linux 可以以超高的自由度来定制自己的系统，并且其拥有最完善的[文档](https://wiki.archlinux.org/index.php/Main_page)，使得绝大多数问题都可以通过查看官方文档的方式解决。正是由于其软件更新的策略的激进，如果条件允许，建议使用者经常对 Arch Linux 进行更新。较长时间段内没有升级可能会造成各种问题（俗称 `滚挂了`），虽然大多数问题可以通过救援手段事后补救，但还是常常更新得好。同时，关注 Arch Linux 的[新闻列表](https://archlinux.org/news/)可以帮助你得知最新的升级注意事项。
 
 ## 配套视频分 P 列表
 
@@ -62,4 +62,4 @@ Arch Linux 可以以超高的自由度来定制自己的系统，并且其拥有
 - [16:直播与多媒体](https://www.youtube.com/watch?v=d2ZLMpdVrkk)
 - [17:編程軟件](https://www.youtube.com/watch?v=LOtxFQO82XE)
 
-<!-- windows是最好的Linux发行版？It's only a joke -->
+<!-- windows是最好的Linux发行版？It's only a BORING joke. -->
