@@ -54,12 +54,12 @@ Qv2ray 3.0 和 V2rayA 是两款非常优秀的在 Linux 上可用的科学上网
 
 ### Qv2ray 3.0
 
-和上一节中所述相同的原因，由于[中国大陆政府封锁 Github](https://zh.wikipedia.org/wiki/%E5%AF%B9GitHub%E7%9A%84%E5%AE%A1%E6%9F%A5%E5%92%8C%E5%B0%81%E9%94%81#%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD)的原因，你很可能没有办法用正常 yay 的方式通过 AUR 安装[Qv2ray 3.0](https://github.com/Shadowsocks-NET/Qv2ray)，所以 ArchLinuxStudio 提供一份可以直接安装的 bin 包以供你使用。
+和上一节中所述相同的原因，由于[中国大陆政府封锁 Github](https://zh.wikipedia.org/wiki/%E5%AF%B9GitHub%E7%9A%84%E5%AE%A1%E6%9F%A5%E5%92%8C%E5%B0%81%E9%94%81#%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD)的原因，你很可能没有办法用正常 yay 的方式通过 AUR 安装[Qv2ray 3.0](https://github.com/Shadowsocks-NET/Qv2ray)，所以 ArchLinuxStudio 提供一份可以直接安装的包以供你使用。
 
 ```bash
 sudo pacman -S v2ray
-wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/qv2ray-static-bin-nightly-20211215-1-x86_64.pkg.tar.zst
-sudo pacman -U qv2ray-static-bin-nightly-20211215-1-x86_64.pkg.tar.zst
+wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/qv2ray-git-3080.dac7ed16.r.-1-x86_64.pkg.tar.zst
+sudo pacman -U qv2ray-git-3080.dac7ed16.r.-1-x86_64.pkg.tar.zst
 ```
 
 > github.io 也被中国大陆政府封锁，只是封锁力度暂时还没有很大。如你在此过程中卡住，可以尝试 ctrl+c 终止命令后重新尝试下载，也可尝试更换手机热点的网络环境再次进行下载。当你配置好全局代理后，你将不再需要担心任何网络封锁问题。我们将持续为本书读者提供突破互联网审查的可靠流程。
@@ -75,9 +75,12 @@ sudo pacman -U qv2ray-static-bin-nightly-20211215-1-x86_64.pkg.tar.zst
   sudo pacman -R qv2ray-dev-git
   ```
 
-- Qv2ray 3.0 与旧版插件不兼容，原有旧版插件不可使用。目前 3.0 集成了 VMess、Shadowsocks、Trojan 的标准格式 以及 Naive 的支持。**如果**你需要使用其他协议的节点，或非标准形式的节点，可以选择安装 2.7 版本的 `qv2ray-dev-git` 并安装对应插件。如有这方面的需求，读者应该先使用受支持的协议节点设置好翻墙后，再回头安装 2.7 版本的 Qv2ray 和对应插件，因为安装这些包需要翻墙。请在 AUR 搜索关键字 qv2ray-plugin，在[结果](https://aur.archlinux.org/packages/?O=0&K=qv2ray-plugin)中选取你所需要的对应插件进行安装即可。
+- Qv2ray 3.0 与旧版插件不兼容，原有 Qv2ray 2.x 旧版插件不可使用。目前 Qv2ray 3.0 集成了 VMess、Shadowsocks 以及 Trojan 的支持，并通过[插件仓库](https://github.com/Shadowsocks-NET/QvPlugins)提供 命令行插件、测速插件、Trojan-Go 和 Naive 的支持。如果你需要使用其中的插件，则需要自行编译，并将其置入目标目录。同时，ArchLinuxStudio 也提供预先为你编译好的插件以方便你的使用。其中的 Trojan-Go 插件目前似乎并不能正常使用，其中的 hostname 以及 port 不能被正常解析[[1]](https://github.com/Shadowsocks-NET/QvPlugins/issues/1)。
 
-- Qv2ray3.0 的插件仓库[在此](https://github.com/Shadowsocks-NET/QvPlugins)。如果你需要使用其中的插件，则需要自行编译。注意，使用这些插件需要使用动态链接的 qv2ray，安装使用包`qv2ray-git`，而不再是`qv2ray-static-bin-nightly`。其中的 Trojan-Go 插件目前似乎并不能正常使用，其中的 hostname 以及 port 不能被正常解析。
+  - [命令行插件](https://archlinuxstudio.github.io/ArchLinuxTutorial/res/QvPlugins/libQvPlugin-Command.so)
+  - [测速插件](https://archlinuxstudio.github.io/ArchLinuxTutorial/res/QvPlugins/libQvPlugin-LatencyTest.so)
+  - [Trojan-Go](https://archlinuxstudio.github.io/ArchLinuxTutorial/res/QvPlugins/libQvPlugin-TrojanGo.so)
+  - [Naive](https://archlinuxstudio.github.io/ArchLinuxTutorial/res/QvPlugins/libQvPlugin-NaiveProxy.so)
 
 ### V2rayA
 
