@@ -230,39 +230,20 @@ vim /etc/hosts
 
 > 某些情况下如不设置主机名，在 KDE 下可能会存在网络情况变更时无法启动 GUI 应用的问题，在终端中出现形如`No protocol specified qt.qpa.xcb: could not connect to display`的错误，这种情况较为少见[[3]](https://bbs.archlinux.org/viewtopic.php?id=241338)[[4]](https://bbs.archlinux.org/viewtopic.php?id=243674)[[5]](https://wiki.archlinux.org/title/Network_configuration#Local_hostname_resolution)。
 
-## 14. 设置 DNS
-
-一般来说，如今大多电脑连接的路由器是可以自动处理 DNS 的，如果你的路由器不能处理，则需要额外进行 DNS 的设置。同时，如果使用 ISP 提供的默认 DNS,你的网络访问记录将存在**更大的**，被泄露或被当局监视的风险。除此之外，使用 ISP 提供的 DNS 还有可能将某些服务解析至一些已经失效或劣化的服务器。如下的配置将固定使用谷歌的 DNS,但是网络访问延迟可能增加。
-
-vim 编辑/etc/resolv.conf，将如下内容加入其中
-
-```bash
-nameserver 8.8.8.8
-nameserver 2001:4860:4860::8888
-nameserver 8.8.4.4
-nameserver 2001:4860:4860::8844
-```
-
-如果你的路由器可以自动处理 DNS,resolvconf 会在每次网络连接时用路由器的设置覆盖本机/etc/resolv.conf 中的设置，执行如下命令加入不可变标志，使其不能覆盖如上加入的配置[[6]](https://wiki.archlinux.org/title/Domain_name_resolution#Overwriting_of_/etc/resolv.conf)[[7]](https://nssurge.zendesk.com/hc/zh-cn/articles/360011927114-DNS-%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97)。
-
-```bash
-chattr +i /etc/resolv.conf
-```
-
-## 15.为 root 用户设置密码
+## 14.为 root 用户设置密码
 
 ```bash
 passwd root
 ```
 
-## 16.安装微码
+## 15.安装微码
 
 ```bash
 pacman -S intel-ucode   #Intel
 pacman -S amd-ucode     #AMD
 ```
 
-## 17.安装引导程序
+## 16.安装引导程序
 
 ```bash
 pacman -S grub efibootmgr   #grub是启动引导器，efibootmgr被 grub 脚本用来将启动项写入 NVRAM。
@@ -281,9 +262,9 @@ vim /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-> 我们在之前的命令中指定--removable 参数已经可以解决一些主板 NVRAM 的兼容性问题。如不加此参数，在某些主板安装完成后，你会发现没有 nvme 启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件[[8]](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)。除此之外，如果你的主板是一些较老的型号，如 intel 9 系列以下或者较老 AMD 的主板，它们很可能不支持从 nvme 启动系统，虽然可以通过修改 BIOS 加入 NVME 支持模块来解决，但这不在本文讨论范围内。
+> 我们在之前的命令中指定--removable 参数已经可以解决一些主板 NVRAM 的兼容性问题。如不加此参数，在某些主板安装完成后，你会发现没有 nvme 启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件[[6]](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)。除此之外，如果你的主板是一些较老的型号，如 intel 9 系列以下或者较老 AMD 的主板，它们很可能不支持从 nvme 启动系统，虽然可以通过修改 BIOS 加入 NVME 支持模块来解决，但这不在本文讨论范围内。
 
-## 18.完成安装
+## 17.完成安装
 
 ```bash
 exit                # 退回安装环境#

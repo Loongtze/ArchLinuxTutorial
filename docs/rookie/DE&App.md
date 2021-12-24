@@ -128,12 +128,31 @@ sudo pacman -S ark                                                          #与
 sudo pacman -S packagekit-qt5 packagekit appstream-qt appstream             #确保Discover(软件中心）可用 需重启
 sudo pacman -S gwenview                                                     #图片查看器
 sudo pacman -S steam                                                        #稍后看完显卡驱动再使用 专有软件
-sudo pacman -S git
+sudo pacman -S git wget
 ```
 
-> 不要安装过多字体：在字体超过 255 种时，某些 QT 程序可能无法正确显示某些表情和符号，详见链接[1](https://wiki.archlinux.org/title/fonts#Emoji_and_symbols)。
+> 不要安装过多字体：在字体超过 255 种时，某些 QT 程序可能无法正确显示某些表情和符号，详见链接[2](https://wiki.archlinux.org/title/fonts#Emoji_and_symbols)。
 
-## 8.设置系统为中文
+## 8. 设置 DNS
+
+一般来说，如今大多电脑连接的路由器是可以自动处理 DNS 的，如果你的路由器不能处理，则需要额外进行 DNS 的设置。同时，如果使用 ISP 提供的默认 DNS,你的网络访问记录将存在**更大的**，被泄露或被当局监视的风险。除此之外，使用 ISP 提供的 DNS 还有可能将某些服务解析至一些已经失效或劣化的服务器。如下的配置将固定使用谷歌的 DNS,但是网络访问延迟可能增加。
+
+vim 编辑/etc/resolv.conf，删除已有条目，并将如下内容加入其中
+
+```bash
+nameserver 8.8.8.8
+nameserver 2001:4860:4860::8888
+nameserver 8.8.4.4
+nameserver 2001:4860:4860::8844
+```
+
+如果你的路由器可以自动处理 DNS,resolvconf 会在每次网络连接时用路由器的设置覆盖本机/etc/resolv.conf 中的设置，执行如下命令加入不可变标志，使其不能覆盖如上加入的配置[[3]](https://wiki.archlinux.org/title/Domain_name_resolution#Overwriting_of_/etc/resolv.conf)[[4]](https://nssurge.zendesk.com/hc/zh-cn/articles/360011927114-DNS-%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97)。
+
+```bash
+sudo chattr +i /etc/resolv.conf
+```
+
+## 9.设置系统为中文
 
 打开 _System Settings_ > _Regional Settings_ > _Language_ -> _Add languages_ 中选择中文加入，再拖拽到第一位，Apply。
 
@@ -143,7 +162,7 @@ sudo pacman -S git
 
 > 很多人会错误的更改 _System Settings_ > _Regional Settings_ > _Formats_ 中的值为中文蒙古(mn_CN)，默认，或者其他值，这会导致系统中一半英文一半中文。这里的值要保持默认的 en_US 或 zh_CN,或者改为你在 locale.gen 中添加的任意一种语言。
 
-## 9.安装 yay
+## 10.安装 yay
 
 AUR 为 archlinux user repository。任何用户都可以上传自己制作的 AUR 包，这也是 Arch Linux 可用软件众多的原因。由于任何人都可上传，也存在对应的风险，一般选用大众认可的包即可。
 
@@ -158,7 +177,7 @@ sudo pacman -U yay-bin-11.0.2-1-x86_64.pkg.tar.zst
 
 > github.io 也被中国大陆政府封锁，只是封锁力度暂时还没有很大。如你在下载过程中卡住，可以尝试 ctrl+c 终止命令后重新尝试下载，也可尝试更换手机热点的网络环境再次进行下载，后文安装 Qv2ray 时同理。当你配置好全局代理后，你将不再需要担心任何网络封锁问题。我们将持续为本书读者提供突破互联网审查的可靠流程。
 
-## 10.安装输入法
+## 11.安装输入法
 
 [Fcitx5 官方文档](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)
 中文及日文输入法均体验良好。
@@ -189,7 +208,7 @@ SDL_IM_MODULE=fcitx
 
 注销，重新登陆，就可以发现已经可以在各个软件中输入中文了
 
-## 11.配置系统默认编辑器
+## 12.配置系统默认编辑器
 
 默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑 `EDITOR=vim sudoedit /etc/profile` 文件，加入如下内容，将 vim 设置为默认 EDITOR
 
@@ -199,7 +218,7 @@ export EDITOR='vim'
 
 这样就不用在每次执行命令时都指定一遍 `EDITOR=vim` 了。
 
-## 12.启用蓝牙(若有)
+## 13.启用蓝牙(若有)
 
 如果你有蓝牙设备，需要安装蓝牙软件包并启用蓝牙服务。随后在系统设置中进行添加设备与连接即可。
 
