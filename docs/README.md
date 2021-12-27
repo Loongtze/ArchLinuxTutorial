@@ -8,7 +8,7 @@ Arch Linux 安装使用教程，每日实时更新！包含从 Arch Linux 安装
 - 本书特点
   - Linux 二次元电报交流群:[ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://t.me/FSF_Ministry_of_Truth)。
   - 无废话，只给出一套**我们认为**较为合适的路线，不会面面俱到。本书是 tutorial,不是 reference，定位与 wiki.archlinux.org 不同。
-  - 本书使用 docsify 以及 gitalk 开发，并且网站源码全部开源，可放心留言讨论。
+  - 本书使用 docsify 以及 gitalk 开发，并且网站源码全部开源，可放心留言讨论。本网站亦不使用任何有害跟踪器脚本，你可通过 [Brave 浏览器](https://brave.com/zh/)进行检测验证。
   - 本书会持续更新。每日随时根据最新 arch linux 及相关软件动态更新。[鼓励志愿者提交更新](/contribution.md)。
   - 如有必要，相关位置都会贴上 arch linux 相关官方文档作为参考。
   - 不支持任何双系统。
