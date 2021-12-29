@@ -57,7 +57,8 @@ b 站直播时的弹幕可以使用[弹幕库](https://www.danmaku.live/),这个
 
 ## UI/UX 设计
 
-可使用 figma 在线版，或者使用一个非官方的 Linux figma 桌面端软件[figma-linux](https://github.com/Figma-Linux/figma-linux)
+- [figma-linux](https://github.com/Figma-Linux/figma-linux) figma 在线版，或者使用一个非官方的 Linux figma 桌面端软件
+- [Akira](https://aur.archlinux.org/packages/akira/) 使用 Vala 和 GTK 构建的 UI/UX 设计 Linux 原生应用
 
 ## 字幕制作
 
